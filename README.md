@@ -10,20 +10,20 @@
 The project is basically an automation process for login and attending the meet just like a student does on google meet through google meet link already available in G-classroom.
 
 **Automations for:-**
-*Invokes the chrome browsers.
-*Redirect to Login link at 10 am.
-*Searches for the classroom according to the time-table.
-*Clicks on the link already available in google classroom.
-*Switches to the active tab and loads the page.
-*Switches off the camera and microphone and Joins the meet.
-*After the span of one hour leaves the meet and repeats the log-in and joining process for the further subjects according to the timetable.
-*There are usually breaks of 10 minutes between the lectures which is also overseen in the program.
+* Invokes the chrome browsers.
+* Redirect to Login link at 10 am.
+* Searches for the classroom according to the time-table.
+* Clicks on the link already available in google classroom.
+* Switches to the active tab and loads the page.
+* Switches off the camera and microphone and Joins the meet.
+* After the span of one hour leaves the meet and repeats the log-in and joining process for the further subjects according to the timetable.
+* There are usually breaks of 10 minutes between the lectures which is also overseen in the program.
 
 **Tools / Libraries used:-**
-*Pycharm.
-*Selenium library.
-*Date time module.
-*Chrome Options.
+* Pycharm.
+* Selenium library.
+* Date time module.
+* Chrome Options.
 
 __There’s a catch!__
 The student can use the program to automate the whole process and also use this for the normal college online lectures for the ease of own.
