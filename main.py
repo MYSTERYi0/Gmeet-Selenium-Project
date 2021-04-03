@@ -33,7 +33,7 @@ def Sign_in():
     sleep(5)
 
     Password = driver.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input')
-    Password.send_keys(Password)
+    Password.send_keys(password)
     sleep(3)
     next_1 = driver.find_element_by_xpath('//*[@id="passwordNext"]/div/button/div[2]')
     next_1.click()
