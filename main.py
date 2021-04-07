@@ -18,9 +18,8 @@ opt.add_experimental_option("prefs", {
 
 Path = "F:\\Coding shit\\Web Driver\\chromedriver.exe"
 driver = webdriver.Chrome(chrome_options=opt, executable_path=Path)
-email = # Enter the email.
-password = # Enter the password.
-
+email = 'Enter email'
+password = 'Enter password'
 def Sign_in():
     sign_in = driver.get(
         'https://accounts.google.com/signin/v2/identifier?service=classroom&passive=1209600&continue=https%3A%2F%2Fclassroom.google.com%2Fu%2F0%2Fh&followup=https%3A%2F%2Fclassroom.google.com%2Fu%2F0%2Fh&flowName=GlifWebSignIn&flowEntry=ServiceLogin')
@@ -101,8 +100,10 @@ def ss():
 
 def mc():
     driver.get('https://classroom.google.com/u/0/c/MjU5NTYxMzMwODQw')
+    sleep(7)
     mc_link = driver.find_element_by_xpath(
         '//*[@id="yDmH0d"]/div[2]/div/div/div[1]/div/div[2]/div[2]/div/span/a/div')
+    sleep(7)
     mc_link.click()
 
     current_tab = driver.window_handles[1]
@@ -123,6 +124,8 @@ def mc():
                                             '1]/div[2]/div/div[2]/div/div[1]/div[1]/span/span')
     join_now.click()
     sleep(10)
+
+
 
 
 def maths():
@@ -161,10 +164,7 @@ while True:  # This while loop keeps checking continuously whether the time is r
             Sign_in()
             pcom()
         if dt.today().hour == 11 and dt.today().minute == 00:  # Even if 00 is not written it will work form 10 am
-            driver.close()
-            current_tab = driver.window_handles[0]
-            driver.switch_to_window(current_tab)
-            driver.close()
+            driver.quit()
         if dt.today().hour == 11 and dt.today().minute == 10:
             driver = webdriver.Chrome(chrome_options=opt, executable_path=Path)  # It is mandatory to initialise the driver again as driver.close() delinks the driver.
             Sign_in()
@@ -195,28 +195,19 @@ while True:  # This while loop keeps checking continuously whether the time is r
             Sign_in()
             maths()
         if dt.today().hour == 11 and dt.today().minute == 00:  # Even if 00 is not written it will work form 10 am
-            driver.close()
-            current_tab = driver.window_handles[0]
-            driver.switch_to_window(current_tab)
-            driver.close()
+            driver.quit()
         if dt.today().hour == 11 and dt.today().minute == 10:
             driver = webdriver.Chrome(chrome_options=opt, executable_path=Path)  # It is mandatory to initialise the driver again as driver.close() delinks the driver.
             Sign_in()
             pcom()
         if dt.today().hour == 12 and dt.today().minute == 10:
-            driver.close()
-            current_tab = driver.window_handles[0]
-            driver.switch_to_window(current_tab)
-            driver.close()
+            driver.quit()
         if dt.today().hour == 13 and dt.today().minute == 20:
             driver = webdriver.Chrome(chrome_options=opt, executable_path=Path)
             Sign_in()
             mc()
         if dt.today().hour == 14 and dt.today().minute == 20:
-            driver.close()
-            current_tab = driver.window_handles[0]
-            driver.switch_to_window(current_tab)
-            driver.close()
+            driver.quit()
         if dt.today().hour == 14 and dt.today().minute == 30:
             driver = webdriver.Chrome(chrome_options=opt, executable_path=Path)
             Sign_in()
@@ -224,39 +215,31 @@ while True:  # This while loop keeps checking continuously whether the time is r
         if dt.today().hour == 14 and dt.today().minute == 30:
             driver.quit()
 
-    if dt.today().weekday() == 3:  # For Wedneday
-        if dt.today().hour == 10 and dt.today().minute == 00:
+    if dt.today().weekday() == 2:  # For Wednesday
+        if dt.today().hour == 14 and dt.today().minute == 47:
             Sign_in()
             mc()
-        if dt.today().hour == 11 and dt.today().minute == 00:  # Even if 00 is not written it will work form 10 am
-            driver.close()
-            current_tab = driver.window_handles[0]
-            driver.switch_to_window(current_tab)
-            driver.close()
-        if dt.today().hour == 11 and dt.today().minute == 10:
+        if dt.today().hour == 14 and dt.today().minute == 48:  # Even if 00 is not written it will work form 10 am
+            driver.quit()
+        if dt.today().hour == 14 and dt.today().minute == 49:
             driver = webdriver.Chrome(chrome_options=opt, executable_path=Path)  # It is mandatory to initialise the driver again as driver.close() delinks the driver.
             Sign_in()
             maths()
         if dt.today().hour == 12 and dt.today().minute == 10:
-            driver.close()
-            current_tab = driver.window_handles[0]
-            driver.switch_to_window(current_tab)
-            driver.close()
+            driver.quit()
         if dt.today().hour == 13 and dt.today().minute == 20:
             driver = webdriver.Chrome(chrome_options=opt, executable_path=Path)
             Sign_in()
             pcom()
         if dt.today().hour == 14 and dt.today().minute == 20:
-            driver.close()
-            current_tab = driver.window_handles[0]
-            driver.switch_to_window(current_tab)
-            driver.close()
+            driver.quit()
         if dt.today().hour == 14 and dt.today().minute == 30:
             driver = webdriver.Chrome(chrome_options=opt, executable_path=Path)
             Sign_in()
             ss()
         if dt.today().hour == 14 and dt.today().minute == 30:
             driver.quit()
+
     if dt.today().weekday() == 3:  # For thursday
         if dt.today().hour == 10 and dt.today().minute == 00:
             Sign_in()
@@ -264,49 +247,43 @@ while True:  # This while loop keeps checking continuously whether the time is r
         if dt.today().hour == 11 and dt.today().minute == 00:  # Even if 00 is not written it will work form 10 am
             driver.quit()
         if dt.today().hour == 11 and dt.today().minute == 10:
+            driver = webdriver.Chrome(chrome_options=opt, executable_path=Path)
             Sign_in()
             maths()
             if dt.today().hour == 12 and dt.today().minute == 10:
                 driver.quit()
         if dt.today().hour == 12 and dt.today().minute == 20:
+            driver = webdriver.Chrome(chrome_options=opt, executable_path=Path)
             Sign_in()
             mc()
             if dt.today().hour == 13 and dt.today().minute == 20:
                 driver.quit()
         if dt.today().hour == 13 and dt.today().minute == 30:
+            driver = webdriver.Chrome(chrome_options=opt, executable_path=Path)
             driver.quit()
             Sign_in()
             maths()
             if dt.today().hour == 14 and dt.today().minute == 30:
                 driver.quit()
 
-    if dt.today().weekday() == 4:  # For monday
+    if dt.today().weekday() == 4:  # For Friday
         if dt.today().hour == 10 and dt.today().minute == 00:
             Sign_in()
             ss()
         if dt.today().hour == 11 and dt.today().minute == 00:  # Even if 00 is not written it will work form 10 am
-            driver.close()
-            current_tab = driver.window_handles[0]
-            driver.switch_to_window(current_tab)
-            driver.close()
+            driver.quit()
         if dt.today().hour == 11 and dt.today().minute == 10:
             driver = webdriver.Chrome(chrome_options=opt, executable_path=Path)  # It is mandatory to initialise the driver again as driver.close() delinks the driver.
             Sign_in()
             pcom()
         if dt.today().hour == 12 and dt.today().minute == 10:
-            driver.close()
-            current_tab = driver.window_handles[0]
-            driver.switch_to_window(current_tab)
-            driver.close()
+            driver.quit()
         if dt.today().hour == 13 and dt.today().minute == 20:
             driver = webdriver.Chrome(chrome_options=opt, executable_path=Path)
             Sign_in()
             mc()
         if dt.today().hour == 14 and dt.today().minute == 20:
-            driver.close()
-            current_tab = driver.window_handles[0]
-            driver.switch_to_window(current_tab)
-            driver.close()
+            driver.quit()
         if dt.today().hour == 14 and dt.today().minute == 30:
             driver = webdriver.Chrome(chrome_options=opt, executable_path=Path)
             Sign_in()
